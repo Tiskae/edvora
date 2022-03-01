@@ -1,0 +1,38 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+
+  &--actions {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &--link {
+    color: white;
+    cursor: pointer;
+
+    &__active {
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+  }
+
+  &--filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    &__icon {
+      height: 0.8rem;
+    }
+
+    &__text {
+      font-size: 1rem;
+      color: white;
+    }
+  }
+}

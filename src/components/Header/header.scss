@@ -1,0 +1,32 @@
+.header {
+  background-color: #101010;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+
+  &--title {
+    color: white;
+    font-size: 1.7rem;
+  }
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: white;
+  font-weight: bold;
+}
+
+.user-profile {
+}
+
+.user-profile--pic {
+  &__image {
+    height: 2rem;
+  }
+}

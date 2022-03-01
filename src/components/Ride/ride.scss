@@ -1,0 +1,53 @@
+.ride {
+  background-color: #101010;
+  border-radius: 0.5rem;
+  padding: 1.3rem 1.9rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 2.5rem;
+  margin-bottom: 0.8rem;
+
+  &--map-image {
+    height: 10rem;
+  }
+
+  &--details-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &--details {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  &--details__text {
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  &--details__text-title {
+    color: #cfcfcf;
+  }
+
+  &--details__text-value {
+    color: white;
+  }
+
+  &--tags {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &--tag {
+    background-color: rgba(0, 0, 0, 0.56);
+    background-color: black;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+
+    &__text {
+      color: white;
+    }
+  }
+}
