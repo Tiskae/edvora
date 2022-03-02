@@ -16,20 +16,18 @@ import Ride from "./components/Ride";
 import BodyWrapper from "./HOC/BodyWrapper";
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <BodyWrapper>
-          <NavigationControls />
-          {/* <Filter /> */}
-          <Routes>
-            <Route index path="/" element={<NearestRides />} />
-            <Route path="upcoming-rides" element={<UpcomingRides />} />
-            <Route path="past-rides" element={<PastRides />} />
-          </Routes>
-        </BodyWrapper>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header />
+      <BodyWrapper>
+        <NavigationControls />
+        {/* <Filter /> */}
+        <Routes>
+          <Route index path="/" element={<NearestRides />} />
+          <Route path="/upcoming-rides" element={<UpcomingRides />} />
+          <Route path="/past-rides" element={<PastRides />} />
+        </Routes>
+      </BodyWrapper>
+    </div>
   );
 }
 

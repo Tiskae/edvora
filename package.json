@@ -2,6 +2,7 @@
   "name": "edvora",
   "private": true,
   "version": "0.0.0",
+  "proxy": "https://assessment.api.vweb.app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
