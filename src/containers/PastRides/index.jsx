@@ -7,6 +7,7 @@ const PastRides = (props) => {
     <div className={classes.PastRides}>
       <Ride />
       <Ride />
+      <Ride />
     </div>
   );
 };
