@@ -1,67 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navigationControls.scss";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import iconFilter from "../../assests/icon-filter.png";
+import Filter from "../Filter";
 
 const NavigationControls = (props) => {
+  const [showFilter, setShowFilter] = useState(false);
+  const allStatesAndCities = props.allStatesAndCities;
+
   return (
     <nav className="navigation">
       <div className="navigation--actions">
-        <Link
+        <NavLink
           to="/"
           className="navigation--link navigation--link__active"
-          // style={({ isActive }) =>
-          //   isActive
-          //     ? "navigation--link navigation--link__active"
-          //     : "navigation--link"
-          // }
+          style={({ isActive }) =>
+            isActive
+              ? { borderBottom: "2px solid white", paddingBottom: "2px" }
+              : null
+          }
         >
           Nearest rides
-        </Link>
-        <Link to="upcoming-rides" className="navigation--link">
-          Upcoming rides
-        </Link>
-        <Link to="past-rides" className="navigation--link">
-          Past rides
-        </Link>
-        {/* <a
-          className="navigation--link navigation--link__active"
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            window.history.pushState({}, undefined, "/");
-          }}
-        >
-          Nearest rides
-        </a>
-        <a
+        </NavLink>
+        <NavLink
+          to="upcoming-rides"
           className="navigation--link"
-          href="upcoming-rides"
-          onClick={(e) => {
-            e.preventDefault();
-            window.history.pushState({}, undefined, "/upcoming-rides");
-          }}
+          style={({ isActive }) =>
+            isActive
+              ? { borderBottom: "2px solid white", paddingBottom: "2px" }
+              : null
+          }
         >
-          Upcoming rides(4)
-        </a>
-        <a
+          Upcoming rides ({props.upcomingRidesCount})
+        </NavLink>
+        <NavLink
+          to="past-rides"
           className="navigation--link"
-          href="past-rides"
-          onClick={(e) => {
-            e.preventDefault();
-            window.history.pushState({}, undefined, "/past-rides");
-          }}
+          style={({ isActive }) =>
+            isActive
+              ? { borderBottom: "2px solid white", paddingBottom: "2px" }
+              : null
+          }
         >
-          Past rides(2)
-        </a> */}
+          Past rides ({props.pastRidesCount})
+        </NavLink>
       </div>
 
-      <div className="navigation--filter">
+      <div
+        className="navigation--filter"
+        onClick={() => setShowFilter((prev) => !prev)}
+      >
         <img className="navigation--filter__icon" src={iconFilter} />
         <p className="navigation--filter__text">Filters</p>
       </div>
+      {showFilter ? (
+        <Filter data={allStatesAndCities} filterHandler={props.filterHandler} />
+      ) : null}
     </nav>
   );
 };

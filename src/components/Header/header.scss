@@ -28,5 +28,7 @@
 .user-profile--pic {
   &__image {
     height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
   }
 }

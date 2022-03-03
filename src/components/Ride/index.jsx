@@ -1,45 +1,48 @@
 import React from "react";
-import * as classes from "./ride.scss";
-
-import mapImage from "../../assests/map-image.png";
+import "./ride.scss";
 
 const Ride = (props) => {
   return (
     <div className="ride">
-      <img className="ride--map-image" src={mapImage} />
+      <img className="ride--map-image" src={props.imgUrl} />
       <div className="ride--details-container">
         <div className="ride--details">
           <p className="ride--details__text">
             <span className="ride--details__text-title">Ride Id : </span>
-            <span className="ride--details__text-value">002</span>
+            <span className="ride--details__text-value">{props.id}</span>
           </p>
           <p className="ride--details__text">
             <span className="ride--details__text-title">Origin Station : </span>
-            <span className="ride--details__text-value">20</span>
+            <span className="ride--details__text-value">
+              {props.originStation}
+            </span>
           </p>
           <p className="ride--details__text">
             <span className="ride--details__text-title">station_path : </span>
             <span className="ride--details__text-value">
-              [20, 39, 40, 42, 54, 63, 72, 88, 98]
+              [{props.stationPath.join(", ")}]
             </span>
           </p>
           <p className="ride--details__text">
             <span className="ride--details__text-title">Date : </span>
-            <span className="ride--details__text-value">
-              15th Feb 2022 16:33
-            </span>
+            <span className="ride--details__text-value">{props.date}</span>
           </p>
           <p className="ride--details__text">
             <span className="ride--details__text-title">Distance : </span>
-            <span className="ride--details__text-value">1</span>
+            <span className="ride--details__text-value">
+              {
+                // Should change later to distance
+                props.distance
+              }
+            </span>
           </p>
         </div>
         <div className="ride--tags">
           <div className="ride--tag">
-            <p className="ride--tag__text">City Name</p>
+            <p className="ride--tag__text">{props.city}</p>
           </div>
           <div className="ride--tag">
-            <p className="ride--tag__text">State Name</p>
+            <p className="ride--tag__text">{props.state}</p>
           </div>
         </div>
       </div>
